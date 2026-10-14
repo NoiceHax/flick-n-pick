@@ -1,6 +1,6 @@
-# 65to70
+# Flick n' Pick
 
-[![CI](https://github.com/NoiceHax/65to70/actions/workflows/ci.yml/badge.svg)](https://github.com/NoiceHax/65to70/actions/workflows/ci.yml)
+[![CI](https://github.com/NoiceHax/flick-n-pick/actions/workflows/ci.yml/badge.svg)](https://github.com/NoiceHax/flick-n-pick/actions/workflows/ci.yml)
 
 A local-first watch tracker and universal watchlist for the browser.
 
@@ -22,13 +22,13 @@ Letterboxd - without your viewing history ever leaving your machine.
 ## The constraint
 
 Watch history, watchlists and ratings live in IndexedDB on your machine.
-65to70 uploads nothing except to sync targets you explicitly connect. Data
+Flick n' Pick uploads nothing except to sync targets you explicitly connect. Data
 flows *down*, never up.
 
 Two consequences worth knowing before you use it:
 
 - **No host permissions at install.** The built manifest has empty
-  `host_permissions` and empty `content_scripts`. 65to70 is inert until you
+  `host_permissions` and empty `content_scripts`. Flick n' Pick is inert until you
   turn on a site in the popup, at which point it registers a content script for
   that origin only.
 - **Identifying a title asks TMDB.** This is the one seam in the promise, and
@@ -41,7 +41,7 @@ fits in a build holds the popular tens of thousands; everything else - new
 releases, regional cinema, most series - came back as "not in the catalogue",
 which is indistinguishable from a broken extension. Shipping a bigger index
 only moves the line. TMDB's whole catalogue is the only thing that covers what
-people actually watch, so that is what 65to70 asks, and the index is now a
+people actually watch, so that is what Flick n' Pick asks, and the index is now a
 cache in front of it rather than the catalogue itself.
 
 ## Running it
@@ -60,7 +60,7 @@ Load unpacked → `.output/chrome-mv3`.
 
 1. Open the popup and turn on the sites you watch things on. Nothing happens
    until you do.
-2. Play something. 65to70 names what it thinks is playing, in the page. Say
+2. Play something. Flick n' Pick names what it thinks is playing, in the page. Say
    yes, correct it, or ignore it - nothing is recorded either way until you
    confirm, and coverage decides whether it counts as *watched*.
 
@@ -101,11 +101,11 @@ changing between one evening and the next.
 
 | Screen | Answers |
 |---|---|
-| **Now** | Is what I watched recorded? Live status, anything awaiting confirmation, and a search box for recording what 65to70 could not see - a cinema, a television, someone else's account |
+| **Now** | Is what I watched recorded? Live status, anything awaiting confirmation, and a search box for recording what Flick n' Pick could not see - a cinema, a television, someone else's account |
 | **For you** | What should I watch? A deck of suggestions, one card at a time, each stating its reasoning and what it is about. Drag it aside or answer it: not this, save it, or seen it already. Six alternatives underneath, and the discarded pile at the bottom |
 | **List** | What did I save? Ordered by what fits the time you have, and closable - "I've seen it" is one click |
 | **Watched** | What was I in the middle of, and what did I just finish? One to resume, three recent, the rest behind a click. Series carry a season and an episode, both correctable, and anything can be removed |
-| **Sites** | Where may 65to70 run? Per-site grants, an all-sites option, never-track origins, and reporting a site that does not work |
+| **Sites** | Where may Flick n' Pick run? Per-site grants, an all-sites option, never-track origins, and reporting a site that does not work |
 | **⚙** | Pause tracking, whether to be asked about every site, whether titles may be looked up, region, sync status and the exports |
 
 Nothing on any screen records a watch on its own. That still takes a
@@ -140,7 +140,7 @@ cached afterwards.
 ## Reporting a broken site
 
 The popup can assemble a report about the page you are on: its address, what
-65to70 made of it, and the page's structure with the text stripped out - tags,
+Flick n' Pick made of it, and the page's structure with the text stripped out - tags,
 ids and classes, which is what a selector is written against. No cookies, no
 storage, no form values, nothing from your library.
 
